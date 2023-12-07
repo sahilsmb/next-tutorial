@@ -12,7 +12,6 @@ export default async function InvoicesTable({
   currentPage: number;
 }) {
   const invoices = await fetchFilteredInvoices(query, currentPage);
-
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
@@ -86,11 +85,13 @@ export default async function InvoicesTable({
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex items-center gap-3">
                       <Image
+
+                        alt={`${invoice.name}'s profile picture`}
                         src={invoice.image_url}
                         className="rounded-full"
                         width={28}
                         height={28}
-                        alt='ggf'
+          
                       />
                       <p>{invoice.name}</p>
                     </div>
